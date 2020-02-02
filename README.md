@@ -24,17 +24,17 @@ func main() {
     defer logger.Sync()
     
     h := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintln(w, "hi!")
-	})
+        fmt.Fprintln(w, "hi!")
+    })
 
-	srv := &http.Server{
-		Addr:    ":8080",
-		Handler: access.Middleware(loggingFunc(logger))(h),
-	}
+    srv := &http.Server{
+        Addr:    ":8080",
+        Handler: access.Middleware(loggingFunc(logger))(h),
+    }
 
-	if err := srv.ListenAndServe(); err != nil {
-		logger.Panic("webserver stopped", zap.Error(err))
-	}
+    if err := srv.ListenAndServe(); err != nil {
+        logger.Panic("webserver stopped", zap.Error(err))
+    }
 }
 ```
 
