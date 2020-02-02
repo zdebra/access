@@ -2,6 +2,7 @@ package access
 
 import (
 	"net/http"
+	"time"
 )
 
 type myResponseWriter struct {
