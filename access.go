@@ -1,8 +1,8 @@
 // Package access provides a simple middleware to implement access logging for
 // a web server. It is accomplished by letting a caller implement its own
 // logging function.
-// 
-// This is the example in cooperation with zap.Logger: 
+//
+// This is the example in cooperation with zap.Logger:
 //
 // 	func loggingFunc(logger *zap.Logger) access.LogFunc {
 // 		return func(r *http.Request, status, size int, duration time.Duration) {
@@ -18,7 +18,7 @@
 //
 // Then, this function is used to create logging middleware:
 // 	access.Middleware(loggingFunc(logger))
-// 
+//
 // This gives freedom to use user favorite logging solution.
 package access
 
