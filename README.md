@@ -5,6 +5,8 @@ Access is a simple middleware to implement access logging for golang web server.
 ## Example usage
 
 ```go
+import "go.uber.org/zap"
+
 // loggingFunc implemented using zap.Logger
 // you can use any logging system you want
 func loggingFunc(logger *zap.Logger) access.LogFunc {
